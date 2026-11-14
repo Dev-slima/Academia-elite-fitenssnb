@@ -387,3 +387,41 @@ header.is-scrolled { padding-top: 10px; padding-bottom: 10px; box-shadow: 0 8px 
   .dono::before { top: -8px; left: -8px; }
   .dono::after { bottom: -8px; right: -8px; }
 }
+
+/* ===== v7: correção do layout no celular (fica por último de propósito) ===== */
+@media (max-width: 820px) {
+  .conheca-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+  }
+  .dono {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 0 10px; /* espaço para os cantos dourados não ficarem cortados */
+  }
+  .dono-foto {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 4 / 5;
+  }
+  .conheca-texto {
+    text-align: left;
+  }
+  .conheca-texto h3 {
+    font-size: clamp(24px, 7vw, 32px);
+  }
+  .dono-cargo {
+    font-size: 15px !important;
+  }
+  #fonte {
+    font-size: 14px;
+    letter-spacing: .3px;
+    line-height: 1.75;
+    max-width: none;
+  }
+  .conheca-texto .btn-pro {
+    width: 100%;
+  }
+}
